@@ -1,0 +1,9 @@
+{
+    "base_requirements": [
+        "django",
+        "djangorestframework"
+    ],
+    "user_requirements": [
+        
+    ]
+}
