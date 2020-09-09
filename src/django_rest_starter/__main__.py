@@ -1,4 +1,5 @@
-import user
+from _user._user import User
+import _django
 from django_rest_starter._venv import Venv
 
 import sys
