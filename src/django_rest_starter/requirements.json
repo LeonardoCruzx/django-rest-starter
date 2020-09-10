@@ -1,9 +1,10 @@
 {
     "base_requirements": [
         "django",
-        "djangorestframework"
+        "djangorestframework",
+        "django-cors-headers"
     ],
     "user_requirements": [
-        
+        "djangorestframework-simplejwt"
     ]
 }
