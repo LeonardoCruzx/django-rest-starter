@@ -2,13 +2,14 @@ import os
 import json
 
 class Venv:
-    def __init__(self):
-        pass
+    def __init__(self, project_path: str):
+        self.path = project_path
         
     def create_venv(self):
+        os.chdir(self.path)
         os.system(f'python -m venv .venv')
-        self.path = os.getcwd() + '\\.venv\\Scripts\\'
-
+        self.venv_path = self.path + "\\.venv\\Scripts"
+        
     def _get_requirements(self, requirements: str) -> str:
         path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(path)
@@ -20,5 +21,5 @@ class Venv:
 
     def install_requirements(self, requirements: str) -> None:
         req = self._get_requirements(requirements)
-        os.chdir(self.path)
+        os.chdir(self.venv_path)
         os.system(f"pip install {req}")

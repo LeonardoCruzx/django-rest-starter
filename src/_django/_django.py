@@ -8,5 +8,4 @@ class Django:
 
     def create_project_dir(self):
         os.makedirs(self.project_name)
-        os.chdir(self.project_name)
-        self.project_path = os.getcwd()
+        self.project_path = os.getcwd() + f"\\{self.project_name}"
