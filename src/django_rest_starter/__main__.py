@@ -20,8 +20,13 @@ def main() -> Any:
     venv.create_venv()
     venv.install_requirements("base_requirements")
     django.create_project()
+    settings = Settings(django.project_path + f"\\{args.project_name}")
+    settings.add_settings("base_settings")
     if(args.user):
-        pass
+        user = User(django.project_path)
+        user.add_template("base_template")
+        venv.install_requirements("user_requirements")
+        settings.add_settings("user_settings")
     if(args.heroku):
         pass
 
