@@ -2,8 +2,12 @@ import os
 import json
 
 class Venv:
-    def __init__(self, path: str):
-        self.path = path + '\\.venv\\Scripts\\'
+    def __init__(self):
+        pass
+        
+    def create_venv(self):
+        os.system(f'python -m venv .venv')
+        self.path = os.getcwd() + '\\.venv\\Scripts\\'
 
     def _get_requirements(self, requirements: str) -> str:
         path = os.path.dirname(os.path.abspath(__file__))
