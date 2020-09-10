@@ -1,3 +1,4 @@
-class Heroku:
-    def __init__(self):
-        pass
+from _template.template import Template
+
+class Heroku(Template):
+    pass

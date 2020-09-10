@@ -1,5 +1,4 @@
 import os
-import shutil
 from _template.template import Template
 
 class Django(Template):
