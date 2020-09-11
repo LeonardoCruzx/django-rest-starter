@@ -1,0 +1,24 @@
+{
+    "base_settings": [
+        {
+            "label":"#CORS CONFIG",
+            "setting": "CORS_ORIGIN_WHITELIST = []"
+        }
+    ],
+    "user_settings": [
+        {
+            "label": "#REST FRAMEWORK CONFIG",
+            "setting": "REST_FRAMEWORK = {'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework_simplejwt.authentication.JWTAuthentication',]}"
+        },
+        {
+            "label": "#USER CONFIG",
+            "setting": "AUTH_USER_MODEL = 'user.User' "
+        }
+    ],
+    "heroku_settings":[
+        {
+            "label:": "#DATABASE CONFIG",
+            "setting": "db_from_env = dj_database_url.config(conn_max_age=500)\nDATABASES['default'].update(db_from_env)"
+        }
+    ]
+}

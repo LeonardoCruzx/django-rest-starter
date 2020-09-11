@@ -1,0 +1,15 @@
+{
+    "base_requirements": [
+        "django",
+        "djangorestframework",
+        "django-cors-headers"
+    ],
+    "user_requirements": [
+        "djangorestframework-simplejwt"
+    ],
+    "heroku_requirements": [
+        "psycopg2",
+        "dj-database-url",
+        "gunicorn"
+    ]
+}
