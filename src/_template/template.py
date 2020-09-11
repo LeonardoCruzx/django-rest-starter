@@ -8,6 +8,8 @@ class Template:
 
     def _copy_tree(self, src, dst):
         for f in os.listdir(src):
+            if(f == "__pycache__"):
+                continue
             s = os.path.join(src, f)
             d = os.path.join(dst, f)
             shutil.copy2(s,d)

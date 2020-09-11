@@ -1,5 +1,6 @@
 from _user._user import User
 from _django._django import Django
+from django_rest_starter._settings import Settings
 from django_rest_starter._venv import Venv
 
 import sys
@@ -16,7 +17,7 @@ def main() -> Any:
     args = parser.parse_args()
     
     #creates dir of the project
-    django = Django(args.project_name)
+    django = Django(os.getcwd() + f"\\{args.project_name}")
     django.create_project_dir()
 
     #creates .venv and install the base requirements
@@ -26,6 +27,7 @@ def main() -> Any:
 
     #use django admin to start the project
     django.create_project()
+    django.add_template("base_template")
 
     #add base settings to the project
     settings = Settings(django.project_path + f"\\{django.project_name}")
@@ -33,7 +35,7 @@ def main() -> Any:
 
     if(args.user):
         user = User(django.project_path)
-        user.add_template("base_template")
+        user.add_template("base_template", dir="user")
         venv.install_requirements("user_requirements")
         settings.add_settings("user_settings")
     if(args.heroku):

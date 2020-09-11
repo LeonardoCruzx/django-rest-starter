@@ -6,7 +6,7 @@ with open('README.md', "r") as fh:
 
 setuptools.setup(
     name='django-rest-starter',
-    version='0.0.21',
+    version='0.0.29',
     url='https://github.com/LeonardoCruzx/django-rest-starter',
     author='Leonardo Cruz',
     author_email='leonardo.m.cruz0@gmail.com',
