@@ -1,5 +1,6 @@
 from _user._user import User
 from _django._django import Django
+from _heroku._heroku import Heroku
 from django_rest_starter._settings import Settings
 from django_rest_starter._venv import Venv
 
@@ -39,7 +40,10 @@ def main() -> Any:
         venv.install_requirements("user_requirements")
         settings.add_settings("user_settings")
     if(args.heroku):
-        pass
+        heroku = Heroku(django.project_path)
+        heroku.add_template("base_template")
+        venv.install_requirements("heroku_requirements")
+        settings.add_settings("heroku_settings")
 
 if __name__ == "__main__":
     sys.exit(main())

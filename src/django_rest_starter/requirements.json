@@ -6,5 +6,10 @@
     ],
     "user_requirements": [
         "djangorestframework-simplejwt"
+    ],
+    "heroku_requirements": [
+        "psycopg2",
+        "dj-database-url",
+        "gunicorn"
     ]
 }
